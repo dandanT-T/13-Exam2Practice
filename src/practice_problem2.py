@@ -3,8 +3,8 @@ PRACTICE Exam 2, practice_problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Zhicheng Kai.
+"""  # TO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -43,8 +43,9 @@ def main():
 
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DO: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4    ** tests that, taken together,
     #   would form a    ** REASONABLY GOOD test set **
@@ -58,6 +59,30 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+    print('Test 1:')
+    a = practice_problem2a([1,4,5],1)
+    print('Expected: [2, 5, 6]')
+    print('Actural:',a)
+
+    print('Test 2:')
+    b = practice_problem2a([2,4,6,8],9)
+    print('Expected:', [11,13,15,17])
+    print('Actural:',b)
+
+    print('Test 3:')
+    c = practice_problem2a([-3,-4],3)
+    print('Expected:', [0,-1])
+    print('Actural:',c)
+
+    print('Test 4:')
+    d = practice_problem2a([10,9,8,1],-1)
+    print('Expected:', [9,8,7,0])
+    print('Actural:',d)
+
+    print('Test 5:')
+    e = practice_problem2a([0,5],10)
+    print('Expected:', [10,15])
+    print('Actural:',e)
 
 
 def practice_problem2a(sequence, delta):
@@ -78,8 +103,12 @@ def practice_problem2a(sequence, delta):
       :type sequence: [int]
       :type delta:    int
     """
+    new_sequence = []
+    for k in range(len(sequence)):
+        new_sequence = new_sequence + [sequence[k]+delta]
+    return new_sequence
     ###########################################################################
-    # TODO: 3. Implement and test this function.
+    # DO: 3. Implement and test this function.
     #     WRITE THE TESTS FIRST (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -186,8 +215,13 @@ def practice_problem2b(sequence):
     Type hints:
       :type sequence: [str]
     """
+    first_letter = ''
+    for k in range(len(sequence)):
+        if len(sequence[k])> 0:
+            first_letter = first_letter+sequence[k][0]
+    return first_letter
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # DO: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
